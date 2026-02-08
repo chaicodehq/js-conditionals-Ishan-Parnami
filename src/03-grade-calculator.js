@@ -26,4 +26,14 @@
  */
 export function calculateGrade(score, hasExtraCredit) {
   // Your code here
+  if (isNaN(score) || score < 0 || score > 100) return "INVALID"
+
+  if (score < 96 && hasExtraCredit) score +=5;
+
+  if (score >= 90) return "A";
+  if (score >= 80) return "B";
+  if (score >= 70) return "C";
+  if (score >= 60) return "D";
+  return "F";
+
 }
